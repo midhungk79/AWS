@@ -151,6 +151,30 @@ tmpfs            97M     0   97M   0% /run/user/0
 /dev/xvdf        40G  318M   40G   1% /shalom/volume-new
 [root@ip-172-31-13-81 ~]# 
 
+5. Create an EC2 instance. Deploy httpd and a site using bootstrap script.
+
+https://prnt.sc/iBFypMcCy026
+
+[ec2-user@ip-172-31-46-90 ~]$ service httpd status
+Redirecting to /bin/systemctl status httpd.service
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sun 2023-03-05 13:23:31 UTC; 12min ago
+     Docs: man:httpd.service(8)
+ Main PID: 3322 (httpd)
+   Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+   CGroup: /system.slice/httpd.service
+           ├─3322 /usr/sbin/httpd -DFOREGROUND
+           ├─3324 /usr/sbin/httpd -DFOREGROUND
+           ├─3325 /usr/sbin/httpd -DFOREGROUND
+           ├─3326 /usr/sbin/httpd -DFOREGROUND
+           ├─3327 /usr/sbin/httpd -DFOREGROUND
+           └─3328 /usr/sbin/httpd -DFOREGROUND
+
+Mar 05 13:23:31 ip-172-31-46-90.us-east-2.compute.internal systemd[1]: Starting The Apache HTTP Server...
+Mar 05 13:23:31 ip-172-31-46-90.us-east-2.compute.internal systemd[1]: Started The Apache HTTP Server.
+[ec2-user@ip-172-31-46-90 ~]$ 
+
 
 
 
