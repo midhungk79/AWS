@@ -219,9 +219,9 @@ UUID=b7bb0196-d24d-41e5-8fc6-fd0638f1a194     /           xfs    defaults,noatim
 fs-0f1f2ffd438bb15c1:/ /mnt/efs efs defaults,_netdev 0 0
 [ec2-user@ip-172-31-2-241 ~]$ 
 
+the below command we get from efs. while oening the efs we have created. there will be a option to attach.  while pressing attach we can see below command to run 
 
-
-
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0f1f2ffd438bb15c1.efs.us-east-2.amazonaws.com:/ /mnt/efs
 
 
 
