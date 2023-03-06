@@ -176,5 +176,54 @@ Mar 05 13:23:31 ip-172-31-46-90.us-east-2.compute.internal systemd[1]: Started T
 [ec2-user@ip-172-31-46-90 ~]$ 
 
 
+4. Create an EFS and mount it to an EC2 instance automatically without any manual command execution.
+
+
+Created two security groups like efs-source and efs-target. 
+
+Once while creating the efs attached efs-target security group to efs. i have added inbount rule nfs with port 2049 on on it.  the same rule added in the efs-source security group too.  and efs-source security group is attached to the ec2 instance while creating.
+
+Then while creating the is2 instance given the script as below. 
+
+#!/bin/bash
+
+# Install the EFS client software
+sudo yum install -y amazon-efs-utils
+
+# Mount the EFS file system
+sudo mkdir /mnt/efs
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0f1f2ffd438bb15c1.efs.us-east-2.amazonaws.com:/ /mnt/efs
+
+# Configure the EFS mount to persist across reboots
+echo "fs-0f1f2ffd438bb15c1:/ /mnt/efs efs defaults,_netdev 0 0" | sudo tee -a /etc/fstab
+
+
+now the result is.  
+
+[ec2-user@ip-172-31-2-241 ~]$ df -h
+Filesystem                                          Size  Used Avail Use% Mounted on
+devtmpfs                                            474M     0  474M   0% /dev
+tmpfs                                               483M     0  483M   0% /dev/shm
+tmpfs                                               483M  416K  482M   1% /run
+tmpfs                                               483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1                                          8.0G  1.6G  6.4G  20% /
+tmpfs                                                97M     0   97M   0% /run/user/1000
+fs-0f1f2ffd438bb15c1.efs.us-east-2.amazonaws.com:/  8.0E     0  8.0E   0% /mnt/efs
+[ec2-user@ip-172-31-2-241 ~]$ 
+
+
+
+[ec2-user@ip-172-31-2-241 ~]$ cat /etc/fstab 
+#
+UUID=b7bb0196-d24d-41e5-8fc6-fd0638f1a194     /           xfs    defaults,noatime  1   1
+fs-0f1f2ffd438bb15c1:/ /mnt/efs efs defaults,_netdev 0 0
+[ec2-user@ip-172-31-2-241 ~]$ 
+
+
+
+
+
+
+
 
 
