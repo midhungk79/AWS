@@ -224,6 +224,42 @@ https://prnt.sc/THmYlN7dVU5E
 
 
 
+4. Create an iam role and attach iam read policy. Attach the role to an ec2 instance and try to list iam users from ec2 terminal.
+
+https://prnt.sc/7Mgfx74XnRud
+https://prnt.sc/Bit9bRSPGtYx
+
+
+[ec2-user@ip-172-31-43-50 ~]$ aws iam list-users
+{
+    "Users": [
+        {
+            "UserName": "midhungk69", 
+            "PasswordLastUsed": "2023-03-10T06:52:25Z", 
+            "CreateDate": "2023-02-04T07:48:36Z", 
+            "UserId": "AIDAZTORPVK2FZAMAJI46", 
+            "Path": "/", 
+            "Arn": "arn:aws:iam::660253682356:user/midhungk69"
+        }, 
+        {
+            "UserName": "midhungk79", 
+            "PasswordLastUsed": "2023-02-11T06:29:33Z", 
+            "CreateDate": "2022-07-24T16:00:00Z", 
+            "UserId": "AIDAZTORPVK2FYBKKHPQS", 
+            "Path": "/", 
+            "Arn": "arn:aws:iam::660253682356:user/midhungk79"
+        }, 
+        {
+            "UserName": "sshalom", 
+            "PasswordLastUsed": "2023-03-10T08:27:04Z", 
+            "CreateDate": "2023-03-10T07:50:05Z", 
+            "UserId": "AIDAZTORPVK2GVCGYG7JE", 
+            "Path": "/", 
+            "Arn": "arn:aws:iam::660253682356:user/sshalom"
+        }
+    ]
+}
+[ec2-user@ip-172-31-43-50 ~]$ 
 
 
 
