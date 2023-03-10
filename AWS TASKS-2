@@ -210,6 +210,24 @@ See 'docker run --help'.
 d7e0d5d711bda4fb084222a0abca7fa5bb09e4ead49492aa213c2d574839d696
 [ec2-user@ip-172-31-8-137 ~]$ 
 
+3. Create an encrypted ebs volume from and unencrypted volume.
+
+https://prnt.sc/KAoUMznQuuYX
+https://prnt.sc/-NqQEL-yIeXV
+https://prnt.sc/THmYlN7dVU5E
+
+
+1. Just created a non-encrypted volume. 
+2. Created a snapshot from aforementioned volume. 
+3. Then made a encrypted volume from aforementioned snapshot.  
+
+
+
+
+
+
+
+
 
 
 
