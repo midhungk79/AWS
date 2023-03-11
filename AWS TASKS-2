@@ -298,8 +298,40 @@ https://prnt.sc/uBNv8YxDO1XG
 
 
 
+3. Create an EC2 instance in private subnet and access it using bastion host.
 
 
+
+
+https://prnt.sc/ro_bC0gbPWmI
+https://prnt.sc/YjK_OPD9m5h_
+
+
+brogrammer@Midhuns-MacBook-Air Downloads % ssh-add sshalomjo.pem 
+Identity added: sshalomjo.pem (sshalomjo.pem)
+
+brogrammer@Midhuns-MacBook-Air Downloads % ssh -A ec2-user@13.51.204.33  (bastion host- public-subnet added ec2 instance)                                     
+Last login: Sat Mar 11 07:57:23 2023 from 103.70.197.99
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-15-0-17-224 ~]$ ssh ec2-user@15.0.150.67                                                 private subnet added ec2 instance. 
+The authenticity of host '15.0.150.67 (15.0.150.67)' can't be established.
+ECDSA key fingerprint is SHA256:Hg+wezH3SXd1A5JvHqBoiHS6iYu5+7I0veSoPBNY6BM.
+ECDSA key fingerprint is MD5:29:96:f7:18:36:a4:32:73:4c:a7:38:ba:d1:1b:aa:d3.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '15.0.150.67' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-15-0-150-67 ~]$ 
 
 
 
