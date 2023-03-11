@@ -263,6 +263,38 @@ https://prnt.sc/Bit9bRSPGtYx
 
 
 
+1. Create a custom vpc with 2 public subnet and 2 private subnet. 
+
+https://prnt.sc/9uv0f4VBvXbA
+https://prnt.sc/4hDwSHUSdATs
+
+2. Deploy httpd application in an EC2 instance with above created vpc in public subnet.
+
+
+https://prnt.sc/ZkWp0YRxgEbQ
+
+[ec2-user@ip-15-0-17-224 ~]$ service httpd status
+Redirecting to /bin/systemctl status httpd.service
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sat 2023-03-11 06:59:26 UTC; 56s ago
+     Docs: man:httpd.service(8)
+ Main PID: 2535 (httpd)
+   Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+   CGroup: /system.slice/httpd.service
+           ├─2535 /usr/sbin/httpd -DFOREGROUND
+           ├─2539 /usr/sbin/httpd -DFOREGROUND
+           ├─2540 /usr/sbin/httpd -DFOREGROUND
+           ├─2541 /usr/sbin/httpd -DFOREGROUND
+           ├─2542 /usr/sbin/httpd -DFOREGROUND
+           └─2543 /usr/sbin/httpd -DFOREGROUND
+
+Mar 11 06:59:26 ip-15-0-17-224.eu-north-1.compute.internal systemd[1]: Starting The Apache HTTP Server...
+Mar 11 06:59:26 ip-15-0-17-224.eu-north-1.compute.internal systemd[1]: Started The Apache HTTP Server.
+[ec2-user@ip-15-0-17-224 ~]$ 
+
+
+https://prnt.sc/uBNv8YxDO1XG
 
 
 
