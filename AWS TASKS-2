@@ -352,12 +352,22 @@ https://prnt.sc/Ij3Xbslk3_NC
 https://prnt.sc/6rQxBDHeQfVw
 
 Then create peering connection between the vpcs. 
-the edit route table as below for both vpcs route table.  we need to give destination IPs on both vps route table. 
+the edit route table as below for both vpcs route table.  we need to give destination IPs on both vps route table.
+
 
 https://prnt.sc/hW67_xgwVuXP
 https://prnt.sc/CfneeNYZb-30
 
 
+1. A user misses his private key to access EC2 instance. How can the user regain his access to ec2 instance.
+ 
+ Justt create an image (AMI)of your missed key pair ec2 instance. 
+ Then create a new ec2 instance with that AMI. so while configuring it you can have a option to create a new private key. 
+ Save that private key and try to login with it. and delete the old ec2 instance.( means the pprivate key lost instance)
+
+
+
+ 
 
 
 
