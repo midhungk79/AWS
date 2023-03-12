@@ -335,5 +335,30 @@ https://aws.amazon.com/amazon-linux-2/
 
 https://prnt.sc/fgYImH-ODhV_
 
+4. Create 2 VPC and enable vpc peering between them. Also deploy an EC2 instance in both the VPCs and try to access each.
+
+
+
+
+https://prnt.sc/bXKK484RoEvQ
+https://prnt.sc/6Hi7sOur8An6
+
+Created 2 vpc with subnet (subnets are in diffrent availabilty zone) route-table internate gateway.  given cidr value as below for both vpcs. 20.0.0.0/24 (20.0.0.0/16) and 10.0.0.0/24(10.0.0.0/16).
+and also both ec2 instances are created with Both vpcs.
+
+Please note that in the routetable we need to do subnet association. then only we can access the ec2 instance. 
+
+https://prnt.sc/Ij3Xbslk3_NC
+https://prnt.sc/6rQxBDHeQfVw
+
+Then create peering connection between the vpcs. 
+the edit route table as below for both vpcs route table.  we need to give destination IPs on both vps route table. 
+
+https://prnt.sc/hW67_xgwVuXP
+https://prnt.sc/CfneeNYZb-30
+
+
+
+
 
 
